@@ -15,5 +15,9 @@ EXPOSE 80
 RUN docker-php-ext-install mysqli
 RUN a2enmod rewrite
 RUN chmod -R 755 /var/www/html
+ENV DB_HOST=localhost
+ENV DB_USER=root
+ENV DB_PASS=''
+ENV DB_NAME=petrolm_db
 
 
