@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-require_once 'includes/configDB.php';
+require_once 'includes/configDb.php';
 
 // Définir isConnected pour vérifier la connexion de l'utilisateur
 $isConnected = isset($_SESSION['user_id']);
