@@ -14,4 +14,6 @@ EXPOSE 80
 #Exposer mysql 
 RUN docker-php-ext-install mysqli
 RUN a2enmod rewrite
-COPY includes /var/www/html/includes
+RUN chmod -R 755 /var/www/html
+
+
