@@ -13,3 +13,4 @@ RUN apt-get update && apt-get install -y \
 EXPOSE 80
 #Exposer mysql 
 RUN docker-php-ext-install mysqli
+RUN a2enmod rewrite
