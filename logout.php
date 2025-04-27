@@ -1,0 +1,49 @@
+<?php
+session_start(); // Démarrer la session
+
+// Si l'utilisateur a confirmé la déconnexion
+if (isset($_GET['logout']) && $_GET['logout'] === 'true') {
+    // Supprimer toutes les variables de session
+    $_SESSION = [];
+
+    // Détruire la session
+    session_destroy();
+
+    // Rediriger vers la page d'accueil
+    header("Location: login.php");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de Déconnexion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <!-- Container -->
+    <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6">
+        <h1 class="text-2xl font-semibold text-gray-800 text-center mb-4">Voulez-vous vraiment vous déconnecter ?</h1>
+        <p class="text-gray-600 text-center mb-6">Sélectionnez une option ci-dessous pour continuer.</p>
+        <div class="flex justify-center space-x-4">
+            <!-- Bouton Oui -->
+            <a href="?logout=true"
+               class="bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-2 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                Oui
+            </a>
+            <!-- Bouton Non -->
+            <a href="index.php"
+               class="bg-gradient-to-r from-gray-300 to-gray-400 text-gray-800 px-6 py-2 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                Non
+            </a>
+            <!-- Bouton Annuler (redirige vers index.php) -->
+            <a href="index.php"
+               class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                Annuler
+            </a>
+        </div>
+    </div>
+</body>
+</html>
