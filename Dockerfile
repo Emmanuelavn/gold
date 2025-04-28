@@ -20,3 +20,4 @@ ENV DB_USER=root
 ENV DB_PASS=''
 ENV DB_NAME=petrolm_db
 CMD service mysql start && apache2-foreground
+RUN mysqladmin -u root -p status
